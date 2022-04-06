@@ -1,27 +1,98 @@
-# Angularapp
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://rehost.in/assets/images/logo.svg">
+    <img src="https://rehost.in/assets/images/logo.svg" alt="Logo" width="80" height="80">
+    <img src="https://rehost.in/assets/images/AngularJS-Shield.svg" alt="Logo" width="80" height="80">
+  </a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+<h3 align="center">Rehost Template: Angular</h3>
+  <p align="center">
+    Hot-Reload Angular Project on Cloud with Rehost CLI
+    <br />
+    <a href="https://docs.rehost.in/#/getting-started/quickstart"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://github.com/Rehost-Startup/template-angular/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Rehost-Startup/template-angular/issues">Request Feature</a>
+  </p>
+</div>
 
-## Development server
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The core Angular projects are no different than what's created using Angular CLI (`ng new app`). The `Dockerfile`, `docker-compose.yml` and `rehostapp.yml` files are developed to support hot-reload inside Docker containers that are running on the remote machine or the local machine.
 
-## Code scaffolding
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Dependency | Remote Machine | Local Machine |
+--- | --- | --- |
+[Docker](https://docs.docker.com/get-docker/) | Yes | No |
+[Docker-Compose](https://docs.docker.com/compose/install/) | Yes | No |
+[Node.js](https://nodejs.org/en/) | No | Yes |
+[Angular CLI](https://angular.io/cli) | No| Yes |
+[Rehost CLI](https://docs.rehost.in/#/getting-started/installation) | Yes | Yes |
 
-## Running unit tests
+### Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone this repository
+```
+git clone https://github.com/Rehost-Startup/template-angular.git
+```
+2. Edit `rehostapp.yml` file:
+```
+version: 1
 
-## Running end-to-end tests
+label: '<username>.personal.template-angular'
+urls:
+  - "<username>.personal.angular:80"
+app_type: 'docker-compose'
+devices:
+  - "<username>.personal.vm"
+```
+Here, replace `<username>` with your Rehost Username.
+3. On your VM instance, create a new file named `rehostdevice.yml` with the following content:
+```
+version: 1
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+label: '<username>.personal.gcp'
+memory: '2gb'
+disk: '256gb'
+```
+Next, run `rh machine save` and `rh machine up` to connect your VM instance to Rehost.
+4. Finally, run the following command on local machine to deploy the project:
+```
+rh app deploy
+```
+You can monitor the logs of build and app in Rehost Dashboard.
+5. Start Hot-Reload session using:
+```
+rh app hot-reload
+```
+Edit `/src/app/app.component.html` file and save to see the changes go live instantly.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Further help
+<!-- USAGE EXAMPLES -->
+## More Templates
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Checkout more templates at [rehost.in/templates](https://rehost.in/templates).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Connect with Rehost Community on [Discord](https://discord.gg/RnkBxDJJhQ).

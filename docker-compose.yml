@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  template_angular:
+    image: template_angular
+    ports:
+      - 80:4200
+    command: "ng serve --host 0.0.0.0 --poll=2000 --port 4200 --disable-host-check"
+    build:
+      context: .
+      dockerfile: Dockerfile    
+    volumes:
+      - ./:/home/app
+      - /home/app/node_modules
