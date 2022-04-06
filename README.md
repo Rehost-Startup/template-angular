@@ -57,20 +57,23 @@ devices:
   - "<username>.personal.vm"
 ```
 Here, replace `<username>` with your Rehost Username.
-3. On your VM instance, create a new file named `rehostdevice.yml` with the following content:
+
+3. On your VM instance, create a new file named `rehostdevice.yml` with the following content: 
 ```
 version: 1
 
 label: '<username>.personal.gcp'
 memory: '2gb'
 disk: '256gb'
-```
-Next, run `rh machine save` and `rh machine up` to connect your VM instance to Rehost.
+``` 
+Next, run `rh machine save` followed by `rh machine up` to connect your VM instance to Rehost.
+
 4. Finally, run the following command on local machine to deploy the project:
 ```
 rh app deploy
 ```
 You can monitor the logs of build and app in Rehost Dashboard.
+
 5. Start Hot-Reload session using:
 ```
 rh app hot-reload
