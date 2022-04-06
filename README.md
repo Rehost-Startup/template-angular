@@ -53,7 +53,7 @@ label: '<username>.personal.template-angular'
 urls:
   - "<username>.personal.angular:80"
 app_type: 'docker-compose'
-devices:
+machines:
   - "<username>.personal.vm"
 ```
 Here, replace `<username>` with your Rehost Username.
