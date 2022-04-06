@@ -58,7 +58,7 @@ devices:
 ```
 Here, replace `<username>` with your Rehost Username.
 
-3. On your VM instance, create a new file named `rehostdevice.yml` with the following content: 
+3. On your VM instance, create a new file named `rehostmachine.yml` with the following content: 
 ```
 version: 1
 
